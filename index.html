@@ -4,339 +4,329 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lovingwoodz | Luxury Wood Interiors</title>
+  <meta name="description" content="Lovingwoodz — Ambachtelijk maatwerk in hout. Keukens, meubels en totaalinterieurs op maat vanuit Geleen, Nederland." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['Cormorant Garamond', 'serif'],
-            sans: ['Jost', 'sans-serif'],
-          },
-          colors: {
-            wood: {
-              black: '#0C0907',
-              deep: '#1A1008',
-              dark: '#2C1E14',
-              mid: '#4A3728',
-              gold: '#C4A35A',
-              'gold-light': '#D4B96A',
-              sage: '#8F9779',
-              ivory: '#F5EFE6',
-              'ivory-dim': 'rgba(245,239,230,0.6)',
-              'ivory-muted': 'rgba(245,239,230,0.35)',
-            }
-          },
-        }
-      }
-    }
-  </script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --black: #0C0907;
-      --deep: #1A1008;
-      --dark: #2C1E14;
-      --mid: #4A3728;
-      --gold: #C4A35A;
-      --gold-light: #D4B96A;
-      --sage: #8F9779;
-      --ivory: #F5EFE6;
-      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Jost', sans-serif;
-      background-color: var(--black);
-      color: var(--ivory);
-      cursor: none;
-      overflow-x: hidden;
-    }
-
-    /* ── CUSTOM CURSOR ── */
-    #cursor-dot {
-      position: fixed;
-      top: 0; left: 0;
-      width: 8px; height: 8px;
-      background: var(--gold);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: width 0.2s, height 0.2s, background 0.2s;
-      will-change: transform;
-    }
-    #cursor-ring {
-      position: fixed;
-      top: 0; left: 0;
-      width: 40px; height: 40px;
-      border: 1px solid rgba(196,163,90,0.5);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 9998;
-      transform: translate(-50%, -50%);
-      transition: width 0.35s var(--ease-out-expo), height 0.35s var(--ease-out-expo), border-color 0.2s, background 0.2s;
-      will-change: transform;
-    }
-    body:has(a:hover) #cursor-ring,
-    body:has(button:hover) #cursor-ring {
-      width: 64px; height: 64px;
-      border-color: var(--gold);
-      background: rgba(196,163,90,0.05);
-    }
-    body:has(a:hover) #cursor-dot,
-    body:has(button:hover) #cursor-dot {
-      width: 4px; height: 4px;
-    }
-
-    /* ── GRAIN OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: -50%;
-      width: 200%; height: 200%;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
-      opacity: 0.032;
-      pointer-events: none;
-      z-index: 9000;
-      animation: grain 0.5s steps(3) infinite;
-    }
-    @keyframes grain {
-      0%,100% { transform: translate(0,0); }
-      10% { transform: translate(-2%,-2%); }
-      20% { transform: translate(2%,2%); }
-      30% { transform: translate(-1%,3%); }
-      40% { transform: translate(3%,-1%); }
-      50% { transform: translate(-3%,1%); }
-      60% { transform: translate(1%,-3%); }
-      70% { transform: translate(-2%,2%); }
-      80% { transform: translate(2%,-2%); }
-      90% { transform: translate(-1%,1%); }
-    }
-
-    /* ── SCROLL REVEAL ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-40px);
-      transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
-    }
-    .reveal-left.visible { opacity: 1; transform: translateX(0); }
-
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(40px);
-      transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
-    }
-    .reveal-right.visible { opacity: 1; transform: translateX(0); }
-
-    .reveal-scale {
-      opacity: 0;
-      transform: scale(0.94);
-      transition: opacity 1.1s var(--ease-out-expo), transform 1.1s var(--ease-out-expo);
-    }
-    .reveal-scale.visible { opacity: 1; transform: scale(1); }
-
-    /* stagger delays */
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-    .delay-3 { transition-delay: 0.3s; }
-    .delay-4 { transition-delay: 0.4s; }
-    .delay-5 { transition-delay: 0.5s; }
-    .delay-6 { transition-delay: 0.6s; }
-    .delay-7 { transition-delay: 0.7s; }
-    .delay-8 { transition-delay: 0.8s; }
-
-    /* ── IMAGE REVEAL CLIP ── */
-    .clip-reveal {
-      clip-path: inset(100% 0 0 0);
-      transition: clip-path 1.2s var(--ease-out-expo);
-    }
-    .clip-reveal.visible { clip-path: inset(0% 0 0 0); }
-
-    /* ── LINE GROW ── */
-    .line-grow {
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 1s var(--ease-out-expo);
-    }
-    .line-grow.visible { transform: scaleX(1); }
-
-    /* ── SCROLLBAR ── */
-    ::-webkit-scrollbar { width: 3px; }
-    ::-webkit-scrollbar-track { background: var(--black); }
-    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
-
-    /* ── GOLD UNDERLINE LINKS ── */
-    .gold-link {
-      position: relative;
-      display: inline-block;
-    }
-    .gold-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px; left: 0;
-      width: 100%; height: 1px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.4s var(--ease-out-expo);
-    }
-    .gold-link:hover::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    /* ── MAGNETIC BUTTON ── */
-    .btn-luxury {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 18px 44px;
-      background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--ivory);
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      cursor: none;
-      overflow: hidden;
-      transition: color 0.4s;
-    }
-    .btn-luxury::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--gold);
-      transform: translateX(-101%);
-      transition: transform 0.5s var(--ease-out-expo);
-    }
-    .btn-luxury:hover::before { transform: translateX(0); }
-    .btn-luxury:hover { color: var(--black); }
-    .btn-luxury span, .btn-luxury svg { position: relative; z-index: 1; }
-
-    .btn-solid {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 18px 44px;
-      background: var(--gold);
-      color: var(--black);
-      font-family: 'Jost', sans-serif;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      cursor: none;
-      overflow: hidden;
-      transition: background 0.4s, color 0.4s;
-    }
-    .btn-solid:hover { background: var(--ivory); }
-
-    /* ── SECTION LABEL ── */
-    .section-label {
-      font-family: 'Jost', sans-serif;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-
-    /* ── DISPLAY HEADING ── */
-    .display { font-family: 'Cormorant Garamond', serif; }
-
-    /* ── HORIZONTAL RULE ── */
-    .hr-gold { height: 1px; background: linear-gradient(90deg, var(--gold), transparent); }
-
-    /* ── PARALLAX IMAGE ── */
-    .parallax-wrap { overflow: hidden; }
-    .parallax-img {
-      will-change: transform;
-      transform: scale(1.12);
-    }
-
-    /* ── VIDEO OVERLAY ── */
-    .video-overlay { background: linear-gradient(to bottom, rgba(12,9,7,0.2) 0%, rgba(12,9,7,0.7) 100%); }
-
-    /* Counter animation */
-    .counter { font-variant-numeric: tabular-nums; }
-
-    /* Marquee */
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-    .marquee-track { animation: marquee 30s linear infinite; }
-    .marquee-track:hover { animation-play-state: paused; }
-  </style>
-  <script type="importmap">
-  {
-    "imports": {
-      "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
-      "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-      "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
-      "react/": "https://esm.sh/react@^19.2.3/",
-      "react": "https://esm.sh/react@^19.2.3"
-    }
-  }
-  </script>
-  <script type="module" crossorigin src="/lovingwoodz8/assets/index-kMN2es6b.js"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="cursor-dot"></div>
-  <div id="cursor-ring"></div>
-  <div id="root"></div>
 
-  <link rel="stylesheet" href="/index.css" />
-  <script>
-    // Cursor
-    const dot = document.getElementById('cursor-dot');
-    const ring = document.getElementById('cursor-ring');
-    let mx = 0, my = 0, rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-    function animCursor() {
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      dot.style.left = mx + 'px';
-      dot.style.top = my + 'px';
-      ring.style.left = rx + 'px';
-      ring.style.top = ry + 'px';
-      requestAnimationFrame(animCursor);
-    }
-    animCursor();
+<!-- CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
 
-    // Scroll Reveal
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: 0.1 });
-    function initReveal() {
-      document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .clip-reveal, .line-grow').forEach(el => observer.observe(el));
-    }
-    document.addEventListener('DOMContentLoaded', initReveal);
-    // Re-run after React renders
-    let lastCount = 0;
-    setInterval(() => {
-      const count = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .clip-reveal, .line-grow').length;
-      if (count !== lastCount) { initReveal(); lastCount = count; }
-    }, 400);
-  </script>
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-light">Loving</span><span class="logo-gold">woodz</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="materials.html">Materialen</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:24px">
+      <a href="contact.html" class="btn-luxury nav-cta"><span>Start a Project</span></a>
+      <button id="nav-hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="nav-mobile-menu">
+  <div class="mobile-line"></div>
+  <a href="index.html"    class="mobile-link" style="transition-delay:.0s">Home</a>
+  <a href="about.html"    class="mobile-link" style="transition-delay:.07s">About</a>
+  <a href="services.html" class="mobile-link" style="transition-delay:.14s">Services</a>
+  <a href="portfolio.html"class="mobile-link" style="transition-delay:.21s">Portfolio</a>
+  <a href="materials.html"class="mobile-link" style="transition-delay:.28s">Materialen</a>
+  <a href="contact.html"  class="mobile-link" style="transition-delay:.35s">Contact</a>
+  <div class="mobile-line" style="margin-top:48px"></div>
+  <a href="mailto:info@lovingwoodz.com" style="margin-top:32px;font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(245,239,230,.4);cursor:none;opacity:0;transition:opacity .6s .5s">info@lovingwoodz.com</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-video-wrap" id="hero-wrap">
+    <video autoplay muted loop playsinline>
+      <source src="images/home1.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+  </div>
+  <div style="position:relative;z-index:10;width:100%;max-width:1280px;margin:0 auto">
+    <div class="hero-content">
+      <div class="reveal" style="margin-bottom:24px">
+        <span class="section-label">Est. 2010 &middot; Geleen, Nederland</span>
+      </div>
+      <h1 class="display hero-title reveal delay-1">Timeless</h1>
+      <h1 class="display hero-title italic reveal delay-2">Woodcraft.</h1>
+      <div class="hero-actions">
+        <a href="portfolio.html" class="btn-luxury reveal delay-3">
+          <span>Ontdek ons werk</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="about.html" class="gold-link reveal delay-4" style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:rgba(245,239,230,.55);cursor:none">Ons verhaal</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span class="marquee-item">Maatwerk Keukens</span><span class="marquee-dot">&middot;</span>
+    <span class="marquee-item">Kastenwanden</span><span class="marquee-dot">&middot;</span>
+    <span class="marquee-item">TV-Meubels</span><span class="marquee-dot">&middot;</span>
+    <span class="marquee-item">Wandpanelen</span><span class="marquee-dot">&middot;</span>
+    <span class="marquee-item">Badkamermeubels</span><span class="marquee-dot">&middot;</span>
+    <span class="marquee-item">Eettafels</span><span class="marquee-dot">&middot;</span>
+    <span class="marquee-item">Interieur op Maat</span><span class="marquee-dot">&middot;</span>
+    <span class="marquee-item">Maatwerk Keukens</span><span class="marquee-dot">&middot;</span>
+    <span class="marquee-item">Kastenwanden</span><span class="marquee-dot">&middot;</span>
+    <span class="marquee-item">TV-Meubels</span><span class="marquee-dot">&middot;</span>
+    <span class="marquee-item">Wandpanelen</span><span class="marquee-dot">&middot;</span>
+    <span class="marquee-item">Badkamermeubels</span><span class="marquee-dot">&middot;</span>
+    <span class="marquee-item">Eettafels</span><span class="marquee-dot">&middot;</span>
+    <span class="marquee-item">Interieur op Maat</span><span class="marquee-dot">&middot;</span>
+  </div>
+</div>
+
+<!-- PHILOSOPHY -->
+<section class="section-std">
+  <div class="philosophy-grid">
+    <div>
+      <div class="section-label-row reveal">
+        <div class="line-grow section-gold-line"></div>
+        <span class="section-label">Onze Filosofie</span>
+      </div>
+      <h2 class="display reveal delay-1" style="font-size:clamp(38px,5vw,72px);font-weight:300;line-height:1.1;color:var(--ivory);margin-bottom:32px">
+        De kracht<br><em style="color:var(--gold);font-style:italic">van hout.</em>
+      </h2>
+      <p class="reveal delay-2" style="font-size:16px;line-height:1.8;color:rgba(245,239,230,.6);font-weight:300;margin-bottom:40px;max-width:480px">
+        Ik geloof in hout, niet alleen omdat het mooi is maar omdat het leeft, het verbindt, het vertelt verhalen. Dat gebruiken we om interieurs te maken die echt iets voor je doen. Wij maken interieurs voor de mooiste momenten in je leven.
+      </p>
+      <a href="about.html" class="gold-link reveal delay-3" style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);cursor:none">Ontdek mijn verhaal</a>
+    </div>
+    <div class="reveal-right delay-2 philosophy-img-wrap">
+      <div class="philosophy-frame"></div>
+      <div class="philosophy-video-container">
+        <video autoplay muted loop playsinline>
+          <source src="images/tv.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item reveal" style="transition-delay:.0s">
+      <div class="stat-val"><span data-counter="14" data-suffix="+">0+</span></div>
+      <div class="stat-label">Jaar ervaring</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:.1s">
+      <div class="stat-val"><span data-counter="120" data-suffix="+">0+</span></div>
+      <div class="stat-label">Projecten voltooid</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:.2s">
+      <div class="stat-val"><span data-counter="100" data-suffix="%">0%</span></div>
+      <div class="stat-label">Maatwerk</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:.3s">
+      <div class="stat-val"><span data-counter="4" data-suffix="">0</span></div>
+      <div class="stat-label">Houtsoorten</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED PROJECTS -->
+<section class="section-std">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:64px;flex-wrap:wrap;gap:24px">
+    <div>
+      <div class="section-label-row reveal">
+        <div class="line-grow section-gold-line"></div>
+        <span class="section-label">Recente Projecten</span>
+      </div>
+      <h2 class="display reveal delay-1" style="font-size:clamp(36px,5vw,64px);font-weight:300;color:var(--ivory);line-height:1.1">
+        Maatwerk<br><em style="color:var(--gold)">in beeld.</em>
+      </h2>
+    </div>
+    <a href="portfolio.html" class="btn-luxury reveal delay-2">
+      <span>Alle projecten</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+    </a>
+  </div>
+  <div class="projects-grid">
+    <a href="portfolio.html" class="project-card reveal" style="aspect-ratio:3/4">
+      <img src="https://images.unsplash.com/photo-1615873968403-89e068628265?q=80&w=1400" alt="The Slat Wall Suite" loading="lazy" />
+      <div class="project-card-overlay"></div>
+      <div class="project-card-body">
+        <span class="project-cat">Woonkamer &middot; Amsterdam</span>
+        <h3 class="project-title">The Slat Wall Suite</h3>
+        <div class="project-cta">
+          <span>Bekijk</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+    </a>
+    <a href="portfolio.html" class="project-card reveal delay-1" style="aspect-ratio:4/5">
+      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1400" alt="Fluted Oak Kitchen" loading="lazy" />
+      <div class="project-card-overlay"></div>
+      <div class="project-card-body">
+        <span class="project-cat">Keuken &middot; Rotterdam</span>
+        <h3 class="project-title">Fluted Oak Kitchen</h3>
+        <div class="project-cta">
+          <span>Bekijk</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+    </a>
+    <a href="portfolio.html" class="project-card reveal delay-2" style="aspect-ratio:4/5">
+      <img src="https://images.unsplash.com/photo-1620626011761-9963d7521477?q=80&w=1400" alt="Minimalist Vanity" loading="lazy" />
+      <div class="project-card-overlay"></div>
+      <div class="project-card-body">
+        <span class="project-cat">Badkamer &middot; Utrecht</span>
+        <h3 class="project-title">Minimalist Vanity</h3>
+        <div class="project-cta">
+          <span>Bekijk</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section-deep section-full">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="margin-bottom:80px">
+      <div class="section-label-row reveal">
+        <div class="line-grow section-gold-line"></div>
+        <span class="section-label">Ons Proces</span>
+      </div>
+      <h2 class="display reveal delay-1" style="font-size:clamp(36px,5vw,64px);font-weight:300;color:var(--ivory);line-height:1.1">
+        Van idee tot<br><em style="color:var(--gold)">meesterwerk.</em>
+      </h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal" style="transition-delay:.0s">
+        <div class="process-num-row"><span class="process-num">01</span><div class="process-num-line"></div></div>
+        <h3 class="process-title">Ontwerp</h3>
+        <p class="process-desc">We luisteren naar jouw wens en vertalen die naar een op maat ontwerp dat past bij jouw ruimte en leven.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.12s">
+        <div class="process-num-row"><span class="process-num">02</span><div class="process-num-line"></div></div>
+        <h3 class="process-title">Materiaal</h3>
+        <p class="process-desc">Selectie van de beste houtsoorten. Elke plank wordt persoonlijk gekozen voor karakter en schoonheid.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.24s">
+        <div class="process-num-row"><span class="process-num">03</span><div class="process-num-line"></div></div>
+        <h3 class="process-title">Vakmanschap</h3>
+        <p class="process-desc">Ambachtelijk gemaakt in eigen werkplaats. Van ruwe plank tot afgewerkt meubel, alles met eigen handen.</p>
+      </div>
+      <div class="process-step reveal" style="transition-delay:.36s">
+        <div class="process-num-row"><span class="process-num">04</span><div class="process-num-line"></div></div>
+        <h3 class="process-title">Plaatsing</h3>
+        <p class="process-desc">Professionele installatie in jouw ruimte. We zorgen dat elk detail klopt tot op de millimeter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-video-wrap">
+    <video autoplay muted loop playsinline>
+      <source src="images/home.mp4" type="video/mp4" />
+    </video>
+    <div class="cta-video-overlay"></div>
+  </div>
+  <div class="cta-content">
+    <p class="reveal section-label" style="margin-bottom:24px">Klaar voor jouw project?</p>
+    <h2 class="display reveal delay-1 cta-title">
+      Start a<br><em style="color:var(--gold)">conversation.</em>
+    </h2>
+    <a href="contact.html" class="btn-luxury reveal delay-2">
+      <span>Neem contact op</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div>
+      <a href="index.html" class="footer-logo" style="display:inline-block;margin-bottom:24px;cursor:none">
+        <span>Loving</span><span>woodz</span>
+      </a>
+      <p style="font-family:'Jost',sans-serif;font-size:13px;line-height:1.8;color:rgba(245,239,230,.45);font-weight:300;max-width:240px">
+        Interieurs voor de mooiste momenten in je leven. Ambachtelijk vakmanschap en de trots van maatwerk.
+      </p>
+      <div class="footer-divider"></div>
+      <span class="footer-col-title">Studio &amp; Werkplaats</span>
+      <p style="font-family:'Jost',sans-serif;font-size:13px;color:rgba(245,239,230,.5);font-weight:300">Nijverheidsweg 24<br>6163 BZ, Geleen</p>
+    </div>
+    <div>
+      <span class="footer-col-title">Navigatie</span>
+      <a href="index.html"    class="footer-link gold-link">Home</a>
+      <a href="about.html"    class="footer-link gold-link">About</a>
+      <a href="services.html" class="footer-link gold-link">Services</a>
+      <a href="portfolio.html" class="footer-link gold-link">Portfolio</a>
+      <a href="materials.html" class="footer-link gold-link">Materialen</a>
+      <a href="contact.html"  class="footer-link gold-link">Contact</a>
+    </div>
+    <div>
+      <span class="footer-col-title">Contact</span>
+      <a href="mailto:info@lovingwoodz.com" class="footer-link gold-link">info@lovingwoodz.com</a>
+      <a href="tel:+31645066847"            class="footer-link gold-link">+31 6 45066847</a>
+      <a href="https://www.instagram.com/lovingwoodz/" target="_blank" rel="noopener noreferrer" class="footer-link gold-link">@lovingwoodz</a>
+    </div>
+    <div>
+      <span class="footer-col-title">Openingstijden</span>
+      <p style="font-family:'Jost',sans-serif;font-size:13px;color:rgba(245,239,230,.55);font-weight:300;margin-bottom:8px">Ma &ndash; Vr: 08:00 &ndash; 16:30</p>
+      <p style="font-family:'Jost',sans-serif;font-size:11px;color:rgba(245,239,230,.3);font-weight:300;line-height:1.6;font-style:italic">Graag vooraf een afspraak zodat we je goed kunnen ontvangen.</p>
+      <a href="https://wa.me/31645066847" target="_blank" rel="noopener noreferrer" class="wa-footer-btn" style="margin-top:32px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-inner">
+      <span class="footer-copy">&copy; <span id="yr"></span> Lovingwoodz. All rights reserved.</span>
+      <div style="display:flex;gap:32px">
+        <a href="#" class="footer-copy" style="transition:color .3s" onmouseenter="this.style.color='rgba(245,239,230,.6)'" onmouseleave="this.style.color=''">Privacy Policy</a>
+        <a href="#" class="footer-copy" style="transition:color .3s" onmouseenter="this.style.color='rgba(245,239,230,.6)'" onmouseleave="this.style.color=''">Algemene Voorwaarden</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/31645066847" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="#0C0907"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const heroWrap = document.getElementById('hero-wrap');
+  window.addEventListener('scroll', () => {
+    if (heroWrap) heroWrap.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
+  }, { passive: true });
+</script>
+<script src="script.js"></script>
 </body>
 </html>

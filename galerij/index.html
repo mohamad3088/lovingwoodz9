@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerij | Lovingwoodz</title>
+  <meta name="description" content="Fotogalerij van Lovingwoodz — alle projecten in beeld." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+<div id="cursor-dot"></div><div id="cursor-ring"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><span class="logo-light">Loving</span><span class="logo-gold">woodz</span></a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a><a href="../about.html">About</a><a href="../services.html">Services</a>
+      <a href="../portfolio.html">Portfolio</a><a href="../materials.html">Materialen</a><a href="../contact.html">Contact</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:24px">
+      <a href="../contact.html" class="btn-luxury nav-cta"><span>Start a Project</span></a>
+      <button id="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div id="nav-mobile-menu">
+  <div class="mobile-line"></div>
+  <a href="../index.html" class="mobile-link" style="transition-delay:.0s">Home</a>
+  <a href="../about.html" class="mobile-link" style="transition-delay:.07s">About</a>
+  <a href="../services.html" class="mobile-link" style="transition-delay:.14s">Services</a>
+  <a href="../portfolio.html" class="mobile-link" style="transition-delay:.21s">Portfolio</a>
+  <a href="../materials.html" class="mobile-link" style="transition-delay:.28s">Materialen</a>
+  <a href="../contact.html" class="mobile-link" style="transition-delay:.35s">Contact</a>
+  <div class="mobile-line" style="margin-top:48px"></div>
+</div>
+
+<!-- HEADER -->
+<section class="page-header">
+  <div class="section-label-row reveal"><div class="line-grow section-gold-line"></div><span class="section-label">Galerij</span></div>
+  <h1 class="display page-title reveal delay-1">Alle projecten<br><em style="color:var(--gold)">in beeld.</em></h1>
+</section>
+
+<!-- GALLERY GRID -->
+<section style="max-width:1280px;margin:0 auto;padding:0 clamp(24px,5vw,80px) clamp(80px,10vw,140px)">
+  <div class="galerij-grid">
+    <div class="galerij-item reveal" style="aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1615873968403-89e068628265?q=80&w=1200" alt="Project 1" loading="lazy" /></div>
+    <div class="galerij-item reveal delay-1" style="aspect-ratio:3/4"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200" alt="Project 2" loading="lazy" /></div>
+    <div class="galerij-item reveal delay-2" style="aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1620626011761-9963d7521477?q=80&w=1200" alt="Project 3" loading="lazy" /></div>
+    <div class="galerij-item reveal" style="aspect-ratio:4/3">
+      <video autoplay muted loop playsinline><source src="../images/zwartkeuken.mp4" type="video/mp4" /></video>
+    </div>
+    <div class="galerij-item reveal delay-1" style="aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?q=80&w=1200" alt="Project 5" loading="lazy" /></div>
+    <div class="galerij-item reveal delay-2" style="aspect-ratio:3/4">
+      <video autoplay muted loop playsinline><source src="../images/kast.mp4" type="video/mp4" /></video>
+    </div>
+    <div class="galerij-item reveal" style="aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1507652313519-d4c9174996dd?q=80&w=1200" alt="Project 7" loading="lazy" /></div>
+    <div class="galerij-item reveal delay-1" style="aspect-ratio:4/3">
+      <video autoplay muted loop playsinline><source src="../images/tv.mp4" type="video/mp4" /></video>
+    </div>
+    <div class="galerij-item reveal delay-2" style="aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=1200" alt="Project 9" loading="lazy" /></div>
+    <div class="galerij-item reveal" style="aspect-ratio:3/4"><img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?q=80&w=1200" alt="Project 10" loading="lazy" /></div>
+    <div class="galerij-item reveal delay-1" style="aspect-ratio:4/3">
+      <video autoplay muted loop playsinline><source src="../images/home1.mp4" type="video/mp4" /></video>
+    </div>
+    <div class="galerij-item reveal delay-2" style="aspect-ratio:4/3"><img src="https://images.unsplash.com/photo-1617103996702-96ff29b1c467?q=80&w=1200" alt="Project 12" loading="lazy" /></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <a href="../index.html" class="footer-logo" style="display:inline-block;margin-bottom:24px;cursor:none"><span>Loving</span><span>woodz</span></a>
+      <p style="font-family:'Jost',sans-serif;font-size:13px;line-height:1.8;color:rgba(245,239,230,.45);font-weight:300;max-width:240px">Interieurs voor de mooiste momenten in je leven.</p>
+      <div class="footer-divider"></div>
+      <span class="footer-col-title">Studio &amp; Werkplaats</span>
+      <p style="font-family:'Jost',sans-serif;font-size:13px;color:rgba(245,239,230,.5);font-weight:300">Nijverheidsweg 24<br>6163 BZ, Geleen</p>
+    </div>
+    <div>
+      <span class="footer-col-title">Navigatie</span>
+      <a href="../index.html" class="footer-link gold-link">Home</a><a href="../about.html" class="footer-link gold-link">About</a>
+      <a href="../services.html" class="footer-link gold-link">Services</a><a href="../portfolio.html" class="footer-link gold-link">Portfolio</a>
+      <a href="../materials.html" class="footer-link gold-link">Materialen</a><a href="../contact.html" class="footer-link gold-link">Contact</a>
+    </div>
+    <div>
+      <span class="footer-col-title">Contact</span>
+      <a href="mailto:info@lovingwoodz.com" class="footer-link gold-link">info@lovingwoodz.com</a>
+      <a href="tel:+31645066847" class="footer-link gold-link">+31 6 45066847</a>
+    </div>
+    <div><span class="footer-col-title">Openingstijden</span><p style="font-family:'Jost',sans-serif;font-size:13px;color:rgba(245,239,230,.55);font-weight:300">Ma &ndash; Vr: 08:00 &ndash; 16:30</p></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-bottom-inner"><span class="footer-copy">&copy; <span id="yr"></span> Lovingwoodz. All rights reserved.</span></div></div>
+</footer>
+<a href="https://wa.me/31645066847" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="#0C0907"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="../script.js"></script>
+</body>
+</html>

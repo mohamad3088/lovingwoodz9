@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materialen | Lovingwoodz</title>
+  <meta name="description" content="Ontdek de pure houtsoorten waarmee Lovingwoodz werkt — van Europees Eiken tot Gerookt Eiken." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="cursor-dot"></div><div id="cursor-ring"></div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><span class="logo-light">Loving</span><span class="logo-gold">woodz</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a><a href="materials.html">Materialen</a><a href="contact.html">Contact</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:24px">
+      <a href="contact.html" class="btn-luxury nav-cta"><span>Start a Project</span></a>
+      <button id="nav-hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div id="nav-mobile-menu">
+  <div class="mobile-line"></div>
+  <a href="index.html" class="mobile-link" style="transition-delay:.0s">Home</a>
+  <a href="about.html" class="mobile-link" style="transition-delay:.07s">About</a>
+  <a href="services.html" class="mobile-link" style="transition-delay:.14s">Services</a>
+  <a href="portfolio.html" class="mobile-link" style="transition-delay:.21s">Portfolio</a>
+  <a href="materials.html" class="mobile-link active" style="transition-delay:.28s">Materialen</a>
+  <a href="contact.html" class="mobile-link" style="transition-delay:.35s">Contact</a>
+  <div class="mobile-line" style="margin-top:48px"></div>
+</div>
+
+<!-- HEADER -->
+<section class="page-header">
+  <div class="section-label-row reveal"><div class="line-grow section-gold-line"></div><span class="section-label">Materialen</span></div>
+  <h1 class="display page-title reveal delay-1">Pure<br><em style="color:var(--gold)">Materiality.</em></h1>
+  <p class="reveal delay-2" style="font-size:16px;line-height:1.8;color:rgba(245,239,230,.5);font-weight:300;max-width:560px;margin-top:24px">
+    Wij werken uitsluitend met massief, natuurlijk hout dat veroudert met gratie en verhalen vertelt. Geen vervangers &mdash; alleen het echte werk.
+  </p>
+</section>
+
+<!-- WOOD SELECTOR -->
+<section style="max-width:1280px;margin:0 auto;padding:0 clamp(24px,5vw,80px) clamp(80px,10vw,140px)">
+  <div class="wood-tabs" id="wood-tabs">
+    <button class="wood-tab active" data-wood="0">European Oak</button>
+    <button class="wood-tab" data-wood="1">American Walnut</button>
+    <button class="wood-tab" data-wood="2">Ash</button>
+    <button class="wood-tab" data-wood="3">Smoked Oak</button>
+  </div>
+  <div class="wood-content" id="wood-content">
+    <div class="wood-img-wrap">
+      <img id="wood-img" src="https://images.unsplash.com/photo-1622397333309-3056849bc70b?q=80&w=1200" alt="Europees Eiken" />
+      <div class="wood-color-swatch">
+        <div class="swatch-circle" id="wood-swatch" style="background:#B8956A"></div>
+        <span class="swatch-label" id="wood-origin">Europa</span>
+      </div>
+    </div>
+    <div class="wood-info">
+      <span class="section-label" id="wood-en" style="display:block;margin-bottom:16px">European Oak</span>
+      <h2 class="display" id="wood-name" style="font-size:clamp(28px,3vw,44px);font-weight:300;font-style:italic;color:var(--ivory);margin-bottom:24px">Europees Eiken</h2>
+      <p id="wood-desc" style="font-size:15px;line-height:1.85;color:rgba(245,239,230,.55);font-weight:300;margin-bottom:40px">Het meest veelzijdige hout in ons repertoire. Klassiek, duurzaam en rijkelijk getekend. Onze populairste keuze voor keuken- en woonkamerprojecten.</p>
+      <div class="wood-traits" id="wood-traits">
+        <div class="wood-trait"><div class="service-dot"></div><span>Hoge hardheid</span></div>
+        <div class="wood-trait"><div class="service-dot"></div><span>Prachtige nerf</span></div>
+        <div class="wood-trait"><div class="service-dot"></div><span>Geschikt voor steam bending</span></div>
+        <div class="wood-trait"><div class="service-dot"></div><span>Veroudert naar warm goud</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINISHING -->
+<section class="section-deep section-full">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:80px;align-items:center;margin-bottom:80px">
+      <div>
+        <div class="section-label-row reveal"><div class="line-grow section-gold-line"></div><span class="section-label">Afwerking</span></div>
+        <h2 class="display reveal delay-1" style="font-size:clamp(32px,4vw,56px);font-weight:300;color:var(--ivory);line-height:1.1;margin-bottom:24px">Finishing<br><em style="color:var(--gold)">Techniques.</em></h2>
+        <p class="reveal delay-2" style="font-size:15px;line-height:1.85;color:rgba(245,239,230,.55);font-weight:300">Wij vermijden zware lakken die de textuur van het hout maskeren. In plaats daarvan gebruiken we natuurlijke oli&euml;n en wassen die in de vezels penetreren &mdash; bescherming met behoud van het authentieke open-pore gevoel.</p>
+      </div>
+      <div class="reveal-right delay-2" style="aspect-ratio:4/3;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1622397333309-3056849bc70b?q=80&w=1200" alt="Wood grain" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy" />
+      </div>
+    </div>
+    <div class="finishing-steps">
+      <div class="finishing-step reveal" style="transition-delay:.0s">
+        <span class="finishing-num">01</span>
+        <h3 class="finishing-title">Schuren</h3>
+        <p class="finishing-desc">Handmatig geschuurd tot 400 grit voor een fluweel-zachte afwerking. Elk oppervlak wordt met de hand gevoeld.</p>
+      </div>
+      <div class="finishing-step reveal" style="transition-delay:.12s">
+        <span class="finishing-num">02</span>
+        <h3 class="finishing-title">Reinigen</h3>
+        <p class="finishing-desc">Verwijdering van alle stof en vet voor een perfecte hechting van de afwerklaag.</p>
+      </div>
+      <div class="finishing-step reveal" style="transition-delay:.24s">
+        <span class="finishing-num">03</span>
+        <h3 class="finishing-title">Olie applicatie</h3>
+        <p class="finishing-desc">Meerdere lagen natuurlijke harde-wax olie, ingewreven met de hand voor maximale penetratie.</p>
+      </div>
+      <div class="finishing-step reveal" style="transition-delay:.36s">
+        <span class="finishing-num">04</span>
+        <h3 class="finishing-title">Buffering</h3>
+        <p class="finishing-desc">Traditioneel gebuffeld voor een zijdezachte, open-pore afwerking die het hout laat ademen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-std" style="text-align:center">
+  <p class="reveal section-label" style="margin-bottom:24px">Klaar voor jouw project?</p>
+  <h2 class="display reveal delay-1" style="font-size:clamp(36px,5vw,72px);font-weight:300;color:var(--ivory);margin-bottom:48px;line-height:1.1">
+    Laten we samen<br><em style="color:var(--gold)">iets moois maken.</em>
+  </h2>
+  <a href="contact.html" class="btn-luxury reveal delay-2"><span>Start een project</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <a href="index.html" class="footer-logo" style="display:inline-block;margin-bottom:24px;cursor:none"><span>Loving</span><span>woodz</span></a>
+      <p style="font-family:'Jost',sans-serif;font-size:13px;line-height:1.8;color:rgba(245,239,230,.45);font-weight:300;max-width:240px">Interieurs voor de mooiste momenten in je leven.</p>
+      <div class="footer-divider"></div>
+      <span class="footer-col-title">Studio &amp; Werkplaats</span>
+      <p style="font-family:'Jost',sans-serif;font-size:13px;color:rgba(245,239,230,.5);font-weight:300">Nijverheidsweg 24<br>6163 BZ, Geleen</p>
+    </div>
+    <div>
+      <span class="footer-col-title">Navigatie</span>
+      <a href="index.html" class="footer-link gold-link">Home</a><a href="about.html" class="footer-link gold-link">About</a>
+      <a href="services.html" class="footer-link gold-link">Services</a><a href="portfolio.html" class="footer-link gold-link">Portfolio</a>
+      <a href="materials.html" class="footer-link gold-link">Materialen</a><a href="contact.html" class="footer-link gold-link">Contact</a>
+    </div>
+    <div>
+      <span class="footer-col-title">Contact</span>
+      <a href="mailto:info@lovingwoodz.com" class="footer-link gold-link">info@lovingwoodz.com</a>
+      <a href="tel:+31645066847" class="footer-link gold-link">+31 6 45066847</a>
+    </div>
+    <div><span class="footer-col-title">Openingstijden</span><p style="font-family:'Jost',sans-serif;font-size:13px;color:rgba(245,239,230,.55);font-weight:300">Ma &ndash; Vr: 08:00 &ndash; 16:30</p></div>
+  </div>
+  <div class="footer-bottom"><div class="footer-bottom-inner"><span class="footer-copy">&copy; <span id="yr"></span> Lovingwoodz. All rights reserved.</span></div></div>
+</footer>
+<a href="https://wa.me/31645066847" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="#0C0907"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const woods = [
+  { en:'European Oak', name:'Europees Eiken', origin:'Europa', color:'#B8956A',
+    img:'https://images.unsplash.com/photo-1622397333309-3056849bc70b?q=80&w=1200',
+    desc:'Het meest veelzijdige hout in ons repertoire. Klassiek, duurzaam en rijkelijk getekend. Onze populairste keuze voor keuken- en woonkamerprojecten. Eiken veroudert met gratie \u2014 de kleur verdiept, het karakter groeit.',
+    traits:['Hoge hardheid','Prachtige nerf','Geschikt voor steam bending','Veroudert naar warm goud']
+  },
+  { en:'American Walnut', name:'Amerikaans Notenhout', origin:'Noord-Amerika', color:'#5C3D2E',
+    img:'https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=1200',
+    desc:'Donker, stemmig en prestige. Notenhout heeft een diepe chocoladebruine toon die elke ruimte verankert. Ideaal voor statement meubels en tv-wanden die indruk maken.',
+    traits:['Donkere rijke kleur','Fijne nerf','Uitstekend te bewerken','Premium uitstraling']
+  },
+  { en:'Ash', name:'Es', origin:'Europa', color:'#D4C4A8',
+    img:'https://images.unsplash.com/photo-1507652313519-d4c9174996dd?q=80&w=1200',
+    desc:'Licht, flexibel en met een uitgesproken open nerf. Es is perfect voor Scandinavisch ge\u00efnspireerde, minimalistische interieurs waar licht en ruimte centraal staan.',
+    traits:['Lichte toon','Uitgesproken nerf','Taai en flexibel','Scandinavische stijl']
+  },
+  { en:'Smoked Oak', name:'Gerookt Eiken', origin:'Europa', color:'#7A6552',
+    img:'https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?q=80&w=1200',
+    desc:'Een diepe, warme toon verkregen door een natuurlijk rookproces met ammoniak. Gerookt eiken straalt luxe en exclusiviteit uit \u2014 elk stuk is uniek door het ambachtelijke proci\u00e8d\u00e9.',
+    traits:['Uniek rookproces','Diepe warme kleur','Extreem exclusief','Tijdloze elegantie']
+  }
+];
+
+function setWood(i) {
+  const w = woods[i];
+  document.getElementById('wood-img').src = w.img;
+  document.getElementById('wood-img').alt = w.name;
+  document.getElementById('wood-swatch').style.background = w.color;
+  document.getElementById('wood-origin').textContent = w.origin;
+  document.getElementById('wood-en').textContent = w.en;
+  document.getElementById('wood-name').textContent = w.name;
+  document.getElementById('wood-desc').textContent = w.desc;
+  document.getElementById('wood-traits').innerHTML = w.traits.map(t =>
+    '<div class="wood-trait"><div class="service-dot"></div><span>' + t + '</span></div>'
+  ).join('');
+  document.querySelectorAll('.wood-tab').forEach((tab,j) => tab.classList.toggle('active', i===j));
+}
+
+document.querySelectorAll('.wood-tab').forEach(tab =>
+  tab.addEventListener('click', () => setWood(+tab.dataset.wood))
+);
+</script>
+<script src="script.js"></script>
+</body>
+</html>
