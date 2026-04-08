@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Owner Dashboard | Lovingwoodz</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+<!-- TOAST -->
+<div id="admin-toast"></div>
+
+<!-- ========================================================
+     LOGIN SCREEN
+     ======================================================== -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-brand">
+      <div class="login-brand-logo">Loving<em>woodz</em></div>
+      <div class="login-brand-sub">Owner Dashboard</div>
+    </div>
+    <div class="login-divider"></div>
+    <form id="login-form" autocomplete="off">
+      <div class="login-field">
+        <label class="login-label" for="login-user">Gebruikersnaam</label>
+        <input id="login-user" type="text" class="login-input" autocomplete="off" required />
+      </div>
+      <div class="login-field">
+        <label class="login-label" for="login-pass">Wachtwoord</label>
+        <input id="login-pass" type="password" class="login-input" autocomplete="off" required />
+      </div>
+      <div id="login-error" class="login-error"></div>
+      <button type="submit" class="login-btn">Inloggen</button>
+    </form>
+    <p style="font-family:'Jost',sans-serif;font-size:11px;color:rgba(245,239,230,.2);text-align:center;margin-top:32px;line-height:1.6">
+      Alleen voor de eigenaar van Lovingwoodz
+    </p>
+  </div>
+</div>
+
+<!-- ========================================================
+     DASHBOARD
+     ======================================================== -->
+<div id="dashboard" style="display:none">
+
+  <!-- SIDEBAR -->
+  <aside id="admin-sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-logo">Loving<em>woodz</em></div>
+      <div class="sidebar-sub">Owner Dashboard</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-btn" data-tab="home">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Startpagina</span>
+      </button>
+      <button class="nav-btn" data-tab="portfolio">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span>Portfolio</span>
+      </button>
+      <button class="nav-btn" data-tab="about">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Over ons</span>
+      </button>
+      <button class="nav-btn" data-tab="services">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 0 0 2.93 19.07M4.93 4.93A10 10 0 0 0 19.07 19.07"/></svg>
+        <span>Diensten</span>
+      </button>
+      <button class="nav-btn" data-tab="settings">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <span>Instellingen</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <button id="sidebar-preview" class="preview-btn">🔍 Bekijk site</button>
+      <button id="sidebar-logout" class="logout-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        <span>Uitloggen</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main id="admin-main">
+
+    <!-- ====================================================
+         TAB: HOME
+         ==================================================== -->
+    <div id="tab-home" class="tab-panel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-label">Inhoud bewerken</div>
+          <h2 class="panel-title">Start<em>pagina</em></h2>
+        </div>
+        <p style="font-size:12px;color:rgba(245,239,230,.35);max-width:280px;line-height:1.6;font-weight:300">Wijzigingen worden opgeslagen in de browser. Klik op &ldquo;Opslaan&rdquo; na elke sectie.</p>
+      </div>
+      <div class="panel-body">
+
+        <!-- Hero tekst -->
+        <div class="form-section">
+          <div class="form-section-title">Hero sectie</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="home-heroLabel">Label (boven de titel)</label>
+              <input type="text" id="home-heroLabel" />
+            </div>
+            <div class="field" style="grid-column:1/-1">
+              <label for="home-heroTitle1">Hoofdtitel regel 1</label>
+              <input type="text" id="home-heroTitle1" />
+            </div>
+            <div class="field" style="grid-column:1/-1">
+              <label for="home-heroTitle2">Hoofdtitel regel 2 (goud cursief)</label>
+              <input type="text" id="home-heroTitle2" />
+            </div>
+            <div class="field">
+              <label for="home-hero-video">Hero video URL</label>
+              <input type="url" id="home-hero-video" placeholder="images/home1.mp4 of https://..." />
+              <div class="hint">Relatief pad (images/...) of volledige URL</div>
+              <div class="img-preview" id="home-hero-video-preview"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filosofie -->
+        <div class="form-section">
+          <div class="form-section-title">Filosofie blok</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="home-philTitle">Titel (zwarte tekst)</label>
+              <input type="text" id="home-philTitle" />
+            </div>
+            <div class="field">
+              <label for="home-philEmphasis">Titel emphasis (goud cursief)</label>
+              <input type="text" id="home-philEmphasis" />
+            </div>
+            <div class="field" style="grid-column:1/-1">
+              <label for="home-philText">Paragraaftekst</label>
+              <textarea id="home-philText" rows="4"></textarea>
+            </div>
+            <div class="field">
+              <label for="home-phil-video">Filosofie video URL</label>
+              <input type="url" id="home-phil-video" />
+              <div class="img-preview" id="home-phil-video-preview"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="form-section">
+          <div class="form-section-title">Call-to-action sectie</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="home-ctaTitle">CTA Titel regel 1</label>
+              <input type="text" id="home-ctaTitle" />
+            </div>
+            <div class="field">
+              <label for="home-ctaEmphasis">CTA Titel regel 2 (goud cursief)</label>
+              <input type="text" id="home-ctaEmphasis" />
+            </div>
+            <div class="field">
+              <label for="home-cta-video">CTA achtergrondvideo URL</label>
+              <input type="url" id="home-cta-video" />
+              <div class="img-preview" id="home-cta-video-preview"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proces -->
+        <div class="form-section">
+          <div class="form-section-title">Proces sectie</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="home-procTitle">Sectietitel regel 1</label>
+              <input type="text" id="home-procTitle" />
+            </div>
+            <div class="field">
+              <label for="home-procEmphasis">Sectietitel regel 2 (goud cursief)</label>
+              <input type="text" id="home-procEmphasis" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="save-bar">
+        <div class="save-note"><strong>Tip:</strong> Videobestanden gebruik je als relatief pad (bijv. <code>images/home1.mp4</code>) of als volledige URL.</div>
+        <button id="home-save" class="save-btn">Startpagina opslaan</button>
+      </div>
+    </div>
+
+    <!-- ====================================================
+         TAB: PORTFOLIO
+         ==================================================== -->
+    <div id="tab-portfolio" class="tab-panel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-label">Projecten beheren</div>
+          <h2 class="panel-title">Port<em>folio</em></h2>
+        </div>
+        <p style="font-size:12px;color:rgba(245,239,230,.35);max-width:280px;line-height:1.6;font-weight:300">Voeg projecten toe, bewerk ze of verwijder ze. Elke wijziging wordt direct opgeslagen.</p>
+      </div>
+      <div class="panel-body">
+
+        <button id="add-project-btn" class="add-project-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Nieuw project toevoegen
+        </button>
+
+        <!-- Project form -->
+        <div id="project-form-panel" class="project-form-panel">
+          <div id="pf-form-title" class="project-form-title">Nieuw project toevoegen</div>
+          <div class="pf-grid">
+            <div class="field">
+              <label for="pf-title">Projectnaam *</label>
+              <input type="text" id="pf-title" placeholder="bijv. The Slat Wall Suite" />
+            </div>
+            <div class="field">
+              <label for="pf-cat">Categorie</label>
+              <input type="text" id="pf-cat" placeholder="bijv. Keuken, Woonkamer, Badkamer" />
+            </div>
+            <div class="field">
+              <label for="pf-loc">Locatie</label>
+              <input type="text" id="pf-loc" placeholder="bijv. Amsterdam, NL" />
+            </div>
+            <div class="field">
+              <label for="pf-year">Jaar</label>
+              <input type="text" id="pf-year" placeholder="bijv. 2024" />
+            </div>
+            <div class="field">
+              <label for="pf-video">Video URL (optioneel)</label>
+              <input type="url" id="pf-video" placeholder="images/project.mp4 of https://..." />
+              <div class="hint">Laat leeg als je geen video hebt</div>
+            </div>
+            <div class="field">
+              <label for="pf-img">Coverfoto URL</label>
+              <input type="url" id="pf-img" placeholder="https://..." />
+              <div class="img-preview" id="pf-img-preview"></div>
+            </div>
+            <div class="field" style="grid-column:1/-1">
+              <label for="pf-desc">Beschrijving</label>
+              <textarea id="pf-desc" rows="4" placeholder="Vertel over dit project..."></textarea>
+            </div>
+            <div class="field" style="grid-column:1/-1">
+              <label for="pf-gallery">Extra galerij foto&apos;s (één URL per regel)</label>
+              <textarea id="pf-gallery" rows="4" placeholder="https://foto1.jpg&#10;https://foto2.jpg&#10;https://foto3.jpg"></textarea>
+              <div class="hint">Elke URL op een nieuwe regel. Maximaal 6 foto&apos;s aanbevolen.</div>
+              <div id="pf-gallery-preview" style="display:flex;gap:4px;flex-wrap:wrap;margin-top:12px"></div>
+            </div>
+          </div>
+          <div class="pf-buttons">
+            <button id="pf-save" class="pf-save-btn">Project opslaan</button>
+            <button id="pf-cancel" class="pf-cancel-btn">Annuleren</button>
+          </div>
+        </div>
+
+        <!-- Projects list -->
+        <div id="portfolio-list" class="projects-list"></div>
+
+      </div>
+    </div>
+
+    <!-- ====================================================
+         TAB: ABOUT
+         ==================================================== -->
+    <div id="tab-about" class="tab-panel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-label">Inhoud bewerken</div>
+          <h2 class="panel-title">Over <em>ons</em></h2>
+        </div>
+      </div>
+      <div class="panel-body">
+
+        <div class="form-section">
+          <div class="form-section-title">Pullquote</div>
+          <div class="form-grid">
+            <div class="field" style="grid-column:1/-1">
+              <label for="ab-quote">Citaat tekst</label>
+              <textarea id="ab-quote" rows="3"></textarea>
+            </div>
+            <div class="field">
+              <label for="ab-author">Auteur</label>
+              <input type="text" id="ab-author" placeholder="— Thijs, Founder" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">Verhaal</div>
+          <div class="field" style="margin-bottom:20px">
+            <label for="ab-story1">Paragraaf 1</label>
+            <textarea id="ab-story1" rows="4"></textarea>
+          </div>
+          <div class="field" style="margin-bottom:20px">
+            <label for="ab-story2">Paragraaf 2</label>
+            <textarea id="ab-story2" rows="4"></textarea>
+          </div>
+          <div class="field">
+            <label for="ab-story3">Paragraaf 3</label>
+            <textarea id="ab-story3" rows="4"></textarea>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">Hoofdfoto</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="about-main-img">Foto URL</label>
+              <input type="url" id="about-main-img" placeholder="https://..." />
+              <div class="img-preview" id="about-main-img-preview"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="save-bar">
+        <div class="save-note"><strong>Tip:</strong> Gebruik een directe afbeeldings-URL (eindigt op .jpg, .png, .webp).</div>
+        <button id="about-save" class="save-btn">Over ons opslaan</button>
+      </div>
+    </div>
+
+    <!-- ====================================================
+         TAB: SERVICES
+         ==================================================== -->
+    <div id="tab-services" class="tab-panel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-label">Inhoud bewerken</div>
+          <h2 class="panel-title">Dien<em>sten</em></h2>
+        </div>
+      </div>
+      <div class="panel-body">
+
+        <!-- Service 1 -->
+        <div class="form-section">
+          <div class="form-section-title">Dienst 1 — Maatwerk Keukens</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="s1-title">Titel</label>
+              <input type="text" id="s1-title" />
+            </div>
+            <div class="field">
+              <label for="s1-sub">Ondertitel</label>
+              <input type="text" id="s1-sub" />
+            </div>
+            <div class="field" style="grid-column:1/-1">
+              <label for="s1-desc">Beschrijving</label>
+              <textarea id="s1-desc" rows="3"></textarea>
+            </div>
+            <div class="field">
+              <label for="s1-img">Afbeelding URL</label>
+              <input type="url" id="s1-img" />
+              <div class="img-preview" id="s1-img-preview"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="form-section">
+          <div class="form-section-title">Dienst 2 — Unieke Meubels</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="s2-title">Titel</label>
+              <input type="text" id="s2-title" />
+            </div>
+            <div class="field">
+              <label for="s2-sub">Ondertitel</label>
+              <input type="text" id="s2-sub" />
+            </div>
+            <div class="field" style="grid-column:1/-1">
+              <label for="s2-desc">Beschrijving</label>
+              <textarea id="s2-desc" rows="3"></textarea>
+            </div>
+            <div class="field">
+              <label for="s2-img">Afbeelding URL</label>
+              <input type="url" id="s2-img" />
+              <div class="img-preview" id="s2-img-preview"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="form-section">
+          <div class="form-section-title">Dienst 3 — Totaal Interieur</div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="s3-title">Titel</label>
+              <input type="text" id="s3-title" />
+            </div>
+            <div class="field">
+              <label for="s3-sub">Ondertitel</label>
+              <input type="text" id="s3-sub" />
+            </div>
+            <div class="field" style="grid-column:1/-1">
+              <label for="s3-desc">Beschrijving</label>
+              <textarea id="s3-desc" rows="3"></textarea>
+            </div>
+            <div class="field">
+              <label for="s3-img">Afbeelding URL</label>
+              <input type="url" id="s3-img" />
+              <div class="img-preview" id="s3-img-preview"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="save-bar">
+        <div class="save-note"><strong>Tip:</strong> De afbeeldingen verschijnen naast de dienstbeschrijving op de Services pagina.</div>
+        <button id="services-save" class="save-btn">Diensten opslaan</button>
+      </div>
+    </div>
+
+    <!-- ====================================================
+         TAB: SETTINGS
+         ==================================================== -->
+    <div id="tab-settings" class="tab-panel">
+      <div class="panel-header">
+        <div>
+          <div class="panel-label">Beheer</div>
+          <h2 class="panel-title">Instel<em>lingen</em></h2>
+        </div>
+      </div>
+      <div class="panel-body">
+
+        <div class="form-section">
+          <div class="form-section-title">Account</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-bottom:32px">
+            <div style="background:var(--deep);border:1px solid rgba(196,163,90,.12);padding:28px">
+              <div style="font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Ingelogd als</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--ivory)">Lovingwoodz Owner</div>
+            </div>
+            <div style="background:var(--deep);border:1px solid rgba(196,163,90,.12);padding:28px">
+              <div style="font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Data opgeslagen in</div>
+              <div style="font-family:'Jost',sans-serif;font-size:13px;font-weight:300;color:rgba(245,239,230,.6);line-height:1.7">Browser localStorage<br><span style="font-size:11px;color:rgba(245,239,230,.3)">Wijzigingen zijn zichtbaar in dit browser</span></div>
+            </div>
+          </div>
+          <p style="font-size:13px;color:rgba(245,239,230,.4);line-height:1.8;font-weight:300;max-width:600px;margin-bottom:32px">
+            <strong style="color:var(--gold);font-weight:400">Hoe werkt het?</strong> Alle aanpassingen worden lokaal opgeslagen in je browser. Ze doen het zolang je op hetzelfde apparaat en dezelfde browser de site bekijkt. Dit is een statische website zonder serverconnectie.
+          </p>
+        </div>
+
+        <div class="danger-zone">
+          <div class="danger-title">⚠ Gevaarlijke zone</div>
+          <p style="font-size:13px;color:rgba(245,239,230,.4);font-weight:300;margin-bottom:20px;line-height:1.7">Alle aanpassingen worden gewist en de website keert terug naar de standaardinhoud. Dit kan niet ongedaan worden gemaakt.</p>
+          <button id="reset-all" class="danger-btn">Alle aanpassingen resetten</button>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>

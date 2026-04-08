@@ -55,7 +55,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-video-wrap" id="hero-wrap">
-    <video autoplay muted loop playsinline>
+    <video autoplay muted loop playsinline data-lw-video="home.heroVideo">
       <source src="images/home1.mp4" type="video/mp4" />
     </video>
     <div class="hero-overlay"></div>
@@ -63,10 +63,10 @@
   <div style="position:relative;z-index:10;width:100%;max-width:1280px;margin:0 auto">
     <div class="hero-content">
       <div class="reveal" style="margin-bottom:24px">
-        <span class="section-label">Est. 2010 &middot; Geleen, Nederland</span>
+        <span class="section-label" data-lw="home.heroLabel">Est. 2010 &middot; Geleen, Nederland</span>
       </div>
-      <h1 class="display hero-title reveal delay-1">Timeless</h1>
-      <h1 class="display hero-title italic reveal delay-2">Woodcraft.</h1>
+      <h1 class="display hero-title reveal delay-1" data-lw="home.heroTitle1">Timeless</h1>
+      <h1 class="display hero-title italic reveal delay-2" data-lw="home.heroTitle2">Woodcraft.</h1>
       <div class="hero-actions">
         <a href="portfolio.html" class="btn-luxury reveal delay-3">
           <span>Ontdek ons werk</span>
@@ -111,9 +111,9 @@
         <span class="section-label">Onze Filosofie</span>
       </div>
       <h2 class="display reveal delay-1" style="font-size:clamp(38px,5vw,72px);font-weight:300;line-height:1.1;color:var(--ivory);margin-bottom:32px">
-        De kracht<br><em style="color:var(--gold);font-style:italic">van hout.</em>
+        <span data-lw="home.philosophyTitle">De kracht</span><br><em style="color:var(--gold);font-style:italic" data-lw="home.philosophyEmphasis">van hout.</em>
       </h2>
-      <p class="reveal delay-2" style="font-size:16px;line-height:1.8;color:rgba(245,239,230,.6);font-weight:300;margin-bottom:40px;max-width:480px">
+      <p class="reveal delay-2" data-lw="home.philosophyText" style="font-size:16px;line-height:1.8;color:rgba(245,239,230,.6);font-weight:300;margin-bottom:40px;max-width:480px">
         Ik geloof in hout, niet alleen omdat het mooi is maar omdat het leeft, het verbindt, het vertelt verhalen. Dat gebruiken we om interieurs te maken die echt iets voor je doen. Wij maken interieurs voor de mooiste momenten in je leven.
       </p>
       <a href="about.html" class="gold-link reveal delay-3" style="font-family:'Jost',sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);cursor:none">Ontdek mijn verhaal</a>
@@ -121,7 +121,7 @@
     <div class="reveal-right delay-2 philosophy-img-wrap">
       <div class="philosophy-frame"></div>
       <div class="philosophy-video-container">
-        <video autoplay muted loop playsinline>
+        <video autoplay muted loop playsinline data-lw-video="home.philosophyVideo">
           <source src="images/tv.mp4" type="video/mp4" />
         </video>
       </div>
@@ -168,7 +168,7 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
     </a>
   </div>
-  <div class="projects-grid">
+  <div class="projects-grid" id="home-projects-grid">
     <a href="portfolio.html" class="project-card reveal" style="aspect-ratio:3/4">
       <img src="https://images.unsplash.com/photo-1615873968403-89e068628265?q=80&w=1400" alt="The Slat Wall Suite" loading="lazy" />
       <div class="project-card-overlay"></div>
@@ -217,7 +217,7 @@
         <span class="section-label">Ons Proces</span>
       </div>
       <h2 class="display reveal delay-1" style="font-size:clamp(36px,5vw,64px);font-weight:300;color:var(--ivory);line-height:1.1">
-        Van idee tot<br><em style="color:var(--gold)">meesterwerk.</em>
+        <span data-lw="home.processTitle">Van idee tot</span><br><em style="color:var(--gold)" data-lw="home.processEmphasis">meesterwerk.</em>
       </h2>
     </div>
     <div class="process-grid">
@@ -248,7 +248,7 @@
 <!-- CTA -->
 <section class="cta-section">
   <div class="cta-video-wrap">
-    <video autoplay muted loop playsinline>
+    <video autoplay muted loop playsinline data-lw-video="home.ctaVideo">
       <source src="images/home.mp4" type="video/mp4" />
     </video>
     <div class="cta-video-overlay"></div>
@@ -256,7 +256,7 @@
   <div class="cta-content">
     <p class="reveal section-label" style="margin-bottom:24px">Klaar voor jouw project?</p>
     <h2 class="display reveal delay-1 cta-title">
-      Start a<br><em style="color:var(--gold)">conversation.</em>
+      <span data-lw="home.ctaTitle">Start a</span><br><em style="color:var(--gold)" data-lw="home.ctaEmphasis">conversation.</em>
     </h2>
     <a href="contact.html" class="btn-luxury reveal delay-2">
       <span>Neem contact op</span>
@@ -327,6 +327,7 @@
     if (heroWrap) heroWrap.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
   }, { passive: true });
 </script>
+<script src="content-loader.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
